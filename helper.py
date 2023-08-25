@@ -4,14 +4,14 @@ items = []
 
 
 @dataclass
-class Item:
-    text: str
+class Todo:
+    todo: str
     isCompleted: bool = False
 
 
 def add(text):
     text = text.replace('b', 'bbb').replace('B', 'Bbb')
-    items.append(Item(text))
+    items.append(Todo(text))
 
 
 def get_all():
