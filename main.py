@@ -11,11 +11,17 @@ def index():
 @app.route('/add', methods=["POST"])
 def add():
     text = request.form.get("text")
-    helper.add(text)
+    date = request.form.get("date")
+    helper.add(text, date)
     return redirect(url_for("index"))
 
 
 @app.route('/update/<int:index>')
 def update(index):
     helper.update(index)
+    return redirect(url_for("index"))
+
+@app.route('/delete_all')
+def delete_all():
+    helper.delete_all()
     return redirect(url_for("index"))
