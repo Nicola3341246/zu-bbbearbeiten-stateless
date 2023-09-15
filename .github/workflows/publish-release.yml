@@ -1,0 +1,19 @@
+# source: https://github.com/marketplace/actions/github-release-from-tag
+name: Publish release
+on:
+    push:
+        tags:
+            - "*"
+jobs:
+    publish:
+        permissions:
+            contents: write
+        name: Publish release
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+            - name: Publish release
+              uses: ghalactic/github-release-from-tag@v5
