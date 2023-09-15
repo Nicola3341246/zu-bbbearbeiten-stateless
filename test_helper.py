@@ -32,3 +32,19 @@ def test_sort():
     # Then: They should be sorted by date
     for i in range(len(helper.items) - 1):
         assert helper.items[i].date < helper.items[i + 1].date
+
+def test_get_csv():
+    todos = [
+        ("Universum debuggen", "2023-09-06"),
+        ("Universum debuggen", "2023-09-06"),
+    ]
+
+    helper.delete_all()
+
+    for todo in todos:
+        helper.add(todo[0], todo[1])
+
+    expected = "Universum debbbuggen,2023-09-06,False\nUniversum debbbuggen,2023-09-06,False\n"
+    result = helper.get_csv()
+
+    assert expected == result

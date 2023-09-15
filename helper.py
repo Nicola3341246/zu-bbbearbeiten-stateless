@@ -33,3 +33,10 @@ def update(index):
 
 def delete_all():
     items.clear()
+
+def get_csv():
+    content = ""
+    for item in items:
+        content += str(item.todo) + "," + str(item.date) + "," + str(item.isCompleted) + "\n"
+
+    return content
