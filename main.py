@@ -28,3 +28,12 @@ def update(index):
 def delete_all():
     helper.delete_all()
     return redirect(url_for("index"))
+
+@app.route("/download")
+def get_csv():
+    return Response(
+        helper.get_csv(),
+        mimetype="text/csv",
+        headers={"Content-disposition":"attachment; filename=zu-bbbearbeiten.csv"},
+    )
+

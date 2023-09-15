@@ -13,6 +13,7 @@
 <body>
     <div style="margin-top: 50px;" class="ui container">
         <h1 class="ui center aligned header">Zu Bbbearbeiten</h1>
+        <a href="/download">Todos Herunterladen</a>
         <div class="ui divider" />
         <form name="item" class="ui form" action="/add" method="post">
             <div class="field" style="margin-top: 10px;">
@@ -23,7 +24,7 @@
                     <button class="ui blue button" type="submit">Hinzufügen</button>
                 </div>
             </div>
-
+            
         </form>
 
         {% for item in items %}
